@@ -1,28 +1,43 @@
 @model List<Ecommerce_CSharp.Data.Category>
-<h2>Tessstt</h2>
+<div class="container">
+    <div class="row pt-4 pb-3">
+        <div class="col-6">
+            <h2 class="text-primary">
+                Category List
+            </h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="Category" asp-action="Create" class="btn btn-primary">
+                <i class="bi bi-plus-circle"></i> Create New Category
+            </a>
 
-<table class="table table-bordered table-striped">
-    <thead>
-    <tr>
-        <th>
-            Category Name
-        </th>
-        <th>
-            Description
-        </th>
-    </tr>
-    </thead>
-    <tbody>
-    @foreach (var item in Model)
-    {
+        </div>
+    </div>
+
+
+    <table class="table table-bordered table-striped">
+        <thead>
         <tr>
-            <td>
-                @item.Name
-            </td>
-            <td>
-                @item.Description
-            </td>
+            <th>
+                Category Name
+            </th>
+            <th>
+                Description
+            </th>
         </tr>
-    }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.Description
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
